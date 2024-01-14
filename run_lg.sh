@@ -6,7 +6,7 @@ VM_NAME='win10_gaming'
 function check_start_vm {
   if virsh domstate $VM_NAME | rg -w 'shut' &>/dev/null; then
     echo 'Starting VM...'
-    sudo rm "$SHM_LG_PATH"
+    # sudo rm "$SHM_LG_PATH"
     virsh start "$VM_NAME"
   fi
 }
@@ -29,5 +29,5 @@ function start_lg {
 }
 
 check_start_vm
-fix_shm_path
+# fix_shm_path
 start_lg
